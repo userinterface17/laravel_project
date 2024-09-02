@@ -1,0 +1,104 @@
+.navbar {
+    background-color: #fff; /* Add background color if not set */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Add shadow for depth */
+    padding: 20px 20px; /* Increase padding for a thicker navbar */
+    position: relative;
+    z-index: 10;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;  /* Space between brand and other content */
+    align-items: center;
+    padding: 0 20px;  /* Horizontal padding to add space around navbar content */
+}
+
+/* Navbar brand link styling */
+.brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+    text-decoration: none;
+    margin-right: 20px;  /* Space between brand and nav links */
+}
+
+/* Nav containers */
+.nav-left {
+    flex-grow: 1; /* This will allow nav-left to take up remaining space */
+}
+
+.nav-right {
+    margin-left: auto; /* Pushes the guest links to the right */
+}
+
+/* Nav menu */
+.nav {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* Nav item */
+.nav .item {
+    margin-left: 20px;  /* Space between each navigation item */
+}
+
+/* Nav links */
+.nav .link {
+    text-decoration: none;
+    color: #333;
+    font-size: 1rem;
+    padding: 8px 16px;  /* Padding for clickable area */
+}
+
+/* Hover effects for links */
+.nav .link:hover {
+    background-color: #f0f0f0;  /* Light background on hover */
+    border-radius: 4px;         /* Rounded corners on hover */
+}
+
+/* Dropdown styling for authenticated users */
+.dropdown-toggle {
+    cursor: pointer;
+}
+
+.dropdown-menu {
+    display: none;  /* Hidden by default */
+    position: absolute;
+    background-color: white;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-top: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;  /* Show on hover */
+}
+
+/* Toggle button */
+.toggle {
+    display: none;  /* Hide by default; adjust for responsive design */
+}
+
+/* For small screens (responsive) */
+@media (max-width: 768px) {
+    .toggle {
+        display: block;  /* Show toggle button */
+    }
+
+    .nav-left, .nav-right {
+        flex-direction: column;  /* Stack nav links vertically */
+        width: 100%;
+    }
+
+    .nav {
+        display: none;  /* Hide nav links */
+        flex-direction: column;  /* Stack nav links vertically */
+    }
+
+    .nav.show {
+        display: flex;  /* Show nav links when toggle is active */
+    }
+}
